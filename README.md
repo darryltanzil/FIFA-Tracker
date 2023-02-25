@@ -40,7 +40,3 @@ http://localhost:8080/comparison?player1=1&player2=2&compare=height ->
 ## Intentions
 
 This API was meant to familiarize myself with the Spring Framework, Maven, accessing information from RESTful APIs, and posting my own individual API endpoint.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
