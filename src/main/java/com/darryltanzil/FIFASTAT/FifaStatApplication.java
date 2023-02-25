@@ -11,6 +11,11 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Collections;
 
+/**
+ * Class to initially boot up the Spring Application.
+ * Defines a Rest template with HTTP headers to the API, and tests getting a character, logging information about it
+ * Used to determine whether connection to API is successful
+ */
 @SpringBootApplication
 public class FifaStatApplication {
     private static final Logger log = LoggerFactory.getLogger(FifaStatApplication.class);
