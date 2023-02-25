@@ -1,6 +1,6 @@
 # FIFA-COMPARE
 
-FIFA-COMPARE is a comparison API developed via Java and the Spring Framework that grabs player information from EA's Ultimate Football 23 Game, and pits them against each other to determine a winner and loser. The original player information was obtained from https://futdb.app/
+FIFA-COMPARE is a small comparison API developed via Java and the Spring Framework that grabs player information from EA's Ultimate Football 23 Game, and pits them against each other to determine a winner and loser. The original player information was obtained from https://futdb.app/
 
 ## Installation
 
@@ -37,12 +37,9 @@ http://localhost:8080/comparison?player1=1&player2=2&compare=height ->
 ```
 
 
-## Contributing
+## Intentions
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate in `test/java/com/darryltanzil/FIFASTAT/`.
+This API was meant to familiarize myself with the Spring Framework, Maven, accessing information from RESTful APIs, and posting my own individual API endpoint.
 
 ## License
 
