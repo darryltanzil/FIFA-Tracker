@@ -99,6 +99,7 @@ public class ComparisonController {
 
     /**
      * Given two player objects, compares the weight between the two
+     * Assumes that both player objects are already valid
      * @param player1 Player one object
      * @param player2 Player two object
      * @return Weight between the two
