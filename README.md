@@ -36,6 +36,10 @@ http://localhost:8080/comparison?player1=1&player2=2&compare=height ->
 {"id":5,"winner":"Thomas Partey","loser":"Martin Ødegaard","description":"Thomas Partey is 7 cm taller then Martin Ødegaard."}
 ```
 
+```
+http://localhost:8080/comparison?player1=1&player2=1&compare=height ->
+{"id":3,"winner":"N/A","loser":"N/A","description":"Error: duplicate player"}
+```
 
 ## Intentions
 
