@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,6 +18,8 @@ import java.util.Collections;
  * Used to determine whether connection to API is successful
  */
 @SpringBootApplication
+@ComponentScan(basePackages = "com.darryltanzil.FIFASTAT")
+
 public class FifaStatApplication {
     private static final Logger log = LoggerFactory.getLogger(FifaStatApplication.class);
     public static void main(String[] args) {

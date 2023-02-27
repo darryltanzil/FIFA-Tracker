@@ -6,18 +6,22 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit test for ComparisonControllerTest
- * Tests methods within the ComparisonController Class, nothing that is Spring Framework specific
+ * Unit test for ComparisonControllerService
+ * Tests methods within the ComparisonControllerService Class, nothing that is Spring Framework specific
  */
-class ComparisonControllerTest {
+class ComparisonServiceTest {
 
-    ComparisonController controller;
+    ComparisonService service;
 
     @BeforeEach
     void init() {
-         controller = new ComparisonController(); // Arrange
+        service = new ComparisonService(); // Arrange
     }
 
+    /**
+     * Compare height, checking 3 edge cases: Player 1 > Player 2, Player 1 < Player 2, Player 1 == Player 2
+     * No need to determine whether or not Player 1 and 2 are valid, since it is already assumed
+     */
     @Test
     void compareHeight() {
 
@@ -27,7 +31,7 @@ class ComparisonControllerTest {
         Player player2 = new Player(1, "Thomas", "Partey", "Thomas Partey", 185, 77);
 
         // Act
-        Comparison response = controller.compareHeight(player1, player2);
+        Comparison response = service.compareHeight(player1, player2);
 
         // Assert
         assertEquals(new Comparison(1, "Thomas Partey", "Martin Ødegaard",
@@ -40,7 +44,7 @@ class ComparisonControllerTest {
         Player case2Player2 = new Player(1, "Thomas", "Partey", "Thomas Partey", 178, 77);
 
         // Act
-        Comparison response2 = controller.compareHeight(case2Player1, case2Player2);
+        Comparison response2 = service.compareHeight(case2Player1, case2Player2);
 
         // Assert
         assertEquals(new Comparison(2, "Martin Ødegaard", "Thomas Partey",
@@ -54,7 +58,7 @@ class ComparisonControllerTest {
         Player case3Player2 = new Player(1, "Thomas", "Partey", "Thomas Partey", 185, 77);
 
         // Act
-        Comparison response3 = controller.compareHeight(case3Player1, case3Player2);
+        Comparison response3 = service.compareHeight(case3Player1, case3Player2);
 
         // Assert
         assertEquals(new Comparison(3,
@@ -62,6 +66,9 @@ class ComparisonControllerTest {
                 case3Player1.name() + " is the same height as " + case3Player2.name() + "."), response3);
     }
 
+    /**
+     * Compare Weight, checking 3 edge cases: Player 1 > Player 2, Player 1 < Player 2, Player 1 == Player 2
+     */
     @Test
     void compareWeight() {
         // CASE 1: Player 1 heavier than player 2
@@ -70,7 +77,7 @@ class ComparisonControllerTest {
         Player player2 = new Player(1, "Thomas", "Partey", "Thomas Partey", 185, 77);
 
         // Act
-        Comparison response = controller.compareWeight(player1, player2);
+        Comparison response = service.compareWeight(player1, player2);
 
         // Assert
         assertEquals(new Comparison(1, "Thomas Partey", "Martin Ødegaard",
@@ -83,7 +90,7 @@ class ComparisonControllerTest {
         Player case2Player2 = new Player(1, "Thomas", "Partey", "Thomas Partey", 178, 68);
 
         // Act
-        Comparison response2 = controller.compareWeight(case2Player1, case2Player2);
+        Comparison response2 = service.compareWeight(case2Player1, case2Player2);
 
         // Assert
         assertEquals(new Comparison(2, "Martin Ødegaard", "Thomas Partey",
@@ -97,7 +104,7 @@ class ComparisonControllerTest {
         Player case3Player2 = new Player(1, "Thomas", "Partey", "Thomas Partey", 185, 68);
 
         // Act
-        Comparison response3 = controller.compareWeight(case3Player1, case3Player2);
+        Comparison response3 = service.compareWeight(case3Player1, case3Player2);
 
         // Assert
         assertEquals(new Comparison(3,
