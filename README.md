@@ -46,7 +46,7 @@ http://localhost:8080/comparison?player1=1&player2=1&compare=height ->
 This API was meant to familiarize myself with the Spring Framework, and Maven. I've had previous experience accessing information from RESTful APIs, and posting API endpoints, but was most experience with it via ExpressJS, Node.JS, and React. This is a way for me to familiarize myself with Spring. As well as this, FIFA-TRACKER is an exercise of my knowledge of software engineering principles.
 
 ### Single Responsibility Principle
-* ComparisonService and ComparisonController are divided into two classes; the ComparisonController focuses purely on handling any GET requests, whereas ComparisonService requests from the FUTDB API, and performs the calculations. This ensures that each class has only one single purpose;
+* ComparisonService and ComparisonController are divided into two classes; the ComparisonController focuses purely on handling any GET requests, whereas ComparisonService requests from the FUTDB API, and performs the calculations. This ensures that each class has only one single purpose.
 
 ### Singleton Design
 * There can only be one "bean" instance of a ComparisonService class. This instance is a dependancy for the ComparisonController class, and is called via the @Autowired annotation. Spring Framework restricts this @Service class by ensuring that it can only be one singular instnace.
