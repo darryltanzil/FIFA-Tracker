@@ -54,3 +54,6 @@ This API was meant to familiarize myself with the Spring Framework, Maven, acces
 ### Unit & Integration Testing
 From this small project, I learned that Unit testing focuses towards methods, and instances of classes / objects / methods. Integration Testing, on the other hand, focuses towards testings people's requests towards the actual service itself, via mock MVC controllers and requests. I made sure to reflect this on my testing.
 
+### Beans, IoC Containers, and MVC
+I learned how Spring handles objects- specifically in the form of beans, which are objects Spring handles with configuration wrapped around them. I learned that Spring's IoC container injects dependencies into an object, makes it available for our use. Spring helped me delve further into MVC (Model-view-controller) architecture, and specifically into the controller aspect. It allowed me to visualize how a user makes a request to the controller, create modelling data from FutDB's API, and send it in the "view" of JSON back to the user.
+
