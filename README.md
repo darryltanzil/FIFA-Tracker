@@ -43,13 +43,13 @@ http://localhost:8080/comparison?player1=1&player2=1&compare=height ->
 
 ## Structuring and Intentions
 
-This API was meant to familiarize myself with the Spring Framework, Maven, accessing information from RESTful APIs, and posting my own individual API endpoint. As well as this, this was an exercise of my knowledge of softare engineering principles,
+This API was meant to familiarize myself with the Spring Framework, Maven, accessing information from RESTful APIs, and posting my own individual API endpoint. As well as this, this was an exercise of my knowledge of softare engineering principles.
 
 ### Single Responsibility Principle
-* ComparisonService and ComparisonController are divided into two classes; the ComparisonController focuses purely on handling any GET requests, whereas ComparisonService requests from the FUTDB API, and performs the calculations.
+* ComparisonService and ComparisonController are divided into two classes; the ComparisonController focuses purely on handling any GET requests, whereas ComparisonService requests from the FUTDB API, and performs the calculations. This ensures that each class has only one single purpose;
 
 ### Singleton Design
-* There can only be one "bean" instance of a ComparisonService class. This instance is a dependancy for the ComparisonController class, and is called via the @Autowired annotation.
+* There can only be one "bean" instance of a ComparisonService class. This instance is a dependancy for the ComparisonController class, and is called via the @Autowired annotation. Spring Framework restricts this @Service class by ensuring that it can only be one singular instnace.
 
 ### Unit & Integration Testing
 From this small project, I learned that Unit testing focuses towards methods, and instances of classes / objects / methods. Integration Testing, on the other hand, focuses towards testings people's requests towards the actual service itself, via mock MVC controllers and requests. I made sure to reflect this on my testing.
