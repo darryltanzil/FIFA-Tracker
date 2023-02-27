@@ -43,7 +43,7 @@ http://localhost:8080/comparison?player1=1&player2=1&compare=height ->
 
 ## Structuring and Intentions
 
-This API was meant to familiarize myself with the Spring Framework, Maven, accessing information from RESTful APIs, and posting my own individual API endpoint. As well as this, this was an exercise of my knowledge of softare engineering principles.
+This API was meant to familiarize myself with the Spring Framework, Maven, accessing information from RESTful APIs, and posting my own individual API endpoint. As well as this, this was an exercise of my knowledge of software engineering principles.
 
 ### Single Responsibility Principle
 * ComparisonService and ComparisonController are divided into two classes; the ComparisonController focuses purely on handling any GET requests, whereas ComparisonService requests from the FUTDB API, and performs the calculations. This ensures that each class has only one single purpose;
@@ -57,3 +57,5 @@ From this small project, I learned that Unit testing focuses towards methods, an
 ### Beans, IoC Containers, and MVC
 I learned how Spring handles objects- specifically in the form of beans, which are objects Spring handles with configuration wrapped around them. I learned that Spring's IoC container injects dependencies into an object, makes it available for our use. Spring helped me delve further into MVC (Model-view-controller) architecture, and specifically into the controller aspect. It allowed me to visualize how a user makes a request to the controller, create modelling data from FutDB's API, and send it in the "view" of JSON back to the user.
 
+### Encapsulation
+I know that encapsulation is a way of wrapping variables and code acting on the variables as a single unit. I did this in FIFA in a small way, via an AtomicCounter object located in ComparisonService. The AtomicCounter is meant to keep track of ids of different requests the end user makes, and it needs to be accessed by the ServiceController. I created a getter method in the ComparisonService class so I can give access to the object in other classes, without actually making it a public variable.
