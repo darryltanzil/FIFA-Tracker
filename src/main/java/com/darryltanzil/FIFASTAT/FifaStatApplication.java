@@ -42,9 +42,6 @@ public class FifaStatApplication {
     @Bean
     public ClientHttpRequestInterceptor myInterceptor() {
         String apiKey = System.getenv("APIKEY");
-        if (apiKey.isEmpty()) {
-            System.out.println("API Key is NULL");
-        }
         return (request, body, execution) -> {
             request.getHeaders().add("X-AUTH-TOKEN", apiKey);
             return execution.execute(request, body);

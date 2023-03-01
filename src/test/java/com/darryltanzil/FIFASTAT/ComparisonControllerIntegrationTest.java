@@ -38,7 +38,6 @@ class ComparisonControllerIntegrationTest {
     void comparison() throws Exception {
 
         // CASE 1: No comparison operator
-
         RequestBuilder badRequest = MockMvcRequestBuilders.get("/comparison").header("X-AUTH-TOKEN",
                 System.getenv("APIKEY"));
         MvcResult badResult = mvc.perform(badRequest).andReturn();
@@ -78,9 +77,22 @@ class ComparisonControllerIntegrationTest {
 
         assertEquals(expectedWeight, weightComparison);
 
+        // CASE 4: Checking for duplicate player request
+        RequestBuilder duplicateRequest = MockMvcRequestBuilders.get("/comparison?player1=1&player2=1&compare=weight").header("X-AUTH-TOKEN",
+                System.getenv("APIKEY"));
+
+        MvcResult duplicateResult = mvc.perform(duplicateRequest).andReturn();
+        String duplicateResultString = duplicateResult.getResponse().getContentAsString();
+
+        ObjectMapper duplicateMapper = new ObjectMapper();
+        Comparison duplicateComparison = mapper.readValue(duplicateResultString, Comparison.class);
+        Comparison expectedDuplicate = new Comparison(4,"N/A", "N/A", "Error: duplicate player");;
+
+        assertEquals(expectedDuplicate, duplicateComparison);
+
+        // TODO: edge case for invalid player id, throw runtime or invalid player?
+
+        // TODO: edge case for invalid comparison, runtime or invalid player?
     }
 
-    @Test
-    void getPlayerData() {
-    }
 }

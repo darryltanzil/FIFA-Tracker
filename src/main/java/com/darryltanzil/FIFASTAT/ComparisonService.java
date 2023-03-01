@@ -37,11 +37,16 @@ public class ComparisonService {
                 PlayerJSON.class
         );
 
+        Player response = new Player(0, "invalid", "invalid",
+                "invalid", 0, 0);
+
         try {
-            return player1Response.getBody().player();
+            response =  player1Response.getBody().player();
         } catch (NullPointerException e) {
             throw new RuntimeException("Error: No player with id: " + player, e);
         }
+
+        return response;
     }
 
     /**
