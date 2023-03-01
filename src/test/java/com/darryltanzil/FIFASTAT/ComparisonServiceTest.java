@@ -54,8 +54,8 @@ class ComparisonServiceTest {
         // Case 3: Both players are the same weight
 
         // Arrange
-        Player case3Player1 = new Player(1, "Martin", "Ødegaard", "Martin Ødegaard", 185, 68);
-        Player case3Player2 = new Player(1, "Thomas", "Partey", "Thomas Partey", 185, 77);
+        Player case3Player1 = new Player(1, "Ben", "White", "Ben White", 165, 68);
+        Player case3Player2 = new Player(1, "Aaron", "Ramsdale", "Aaron Ramsdale", 165, 68);
 
         // Act
         Comparison response3 = service.compareHeight(case3Player1, case3Player2);
